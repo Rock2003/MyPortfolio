@@ -1,0 +1,219 @@
+section {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+}
+section .container {
+    position: relative;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    z-index: 1000;
+}
+
+section .container .contactinfo {
+    position: absolute;
+    top: 40px;
+    width: 350px;
+    height: calc(100%-80px);
+    background: #0f3959;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+section .container .contactinfo h2{
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+section .container .contactinfo .info {
+    list-style: none;
+    -webkit-padding-start: 0px;
+    position: relative;
+    margin: 20px 0;
+    color: white;
+    opacity: 0.6;
+}
+section .container .contactinfo .info:hover {
+    opacity: 1;
+}
+
+section .container .contactinfo .info li em{
+    font-size: 1.9em;
+    vertical-align: middle;
+    margin-right: 10px;
+    padding-top: 9px;
+    color: #fff;
+}
+section .container .contacinfo .info li span:nth-child(1) {
+    width: 30px;
+    min-width: 30px;
+}
+
+section .container .contacinfo .info li span:nth-child(1) img{
+    max-width: 100%;
+    filter: invert(1);
+    opacity: 0.5;
+}
+section .container .contacinfo .info li span:nth-child(2) {
+    color: white;
+    margin-left: 10px;
+    font-weight: 300;
+    opacity: 0.5;
+}    
+section .container .contacinfo .info li span:nth-child(1) img,
+section .container .contacinfo .info li span:nth-child(2) {
+    opacity: 1;
+}        
+
+section .container .contacinfo .sci {
+    position: relative;
+    display: flex;
+
+}
+
+section .container .contactForm {
+    position: absolute;
+    padding: 70px 50px;
+    background: #343A40;
+    margin-left: 150px;
+    padding-left: 250px;
+    width: calc(100%-150px);
+    height: 100%;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+
+section .container .contactForm h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}
+section .container .contactForm .formBox {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+section .container .contactForm .formBox .inputBox {
+    position: relative;
+    margin: 0 0 35px 0;
+}
+
+section .container .contactForm .formBox .inputBox.w50 {
+    width: 47%;
+}
+
+section .container .contactForm .formBox .inputBox.w100 {
+    width: 100%;
+}
+section .container .contactForm .formBox .inputBox textarea, 
+section .container .contactForm .formBox .inputBox input {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    border: none;
+    resize: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+    background-color: #343A40;
+}
+
+section .container .contactForm .formBox .inputBox textarea {
+    min-height: 120px;
+}
+
+section .container .contactForm .formBox .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+section .container .contactForm .formBox .inputBox input:focus ~ span,
+section .container .contactForm .formBox .inputBox textarea:focus ~ span,
+section .container .contactForm .formBox .inputBox input:valid ~ span,
+section .container .contactForm .formBox .inputBox textarea:valid ~ span {
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: white;
+}
+
+section .container .contactForm .formBox .inputBox button {
+    position: relative;
+    cursor: pointer;
+    background: #0f3959;
+    color: white;
+    border: none;
+    max-width: 150px;
+    padding: 12px;
+}
+
+section .container .contactForm .formBox .inputBox button:hover {
+    background: white;
+    color: #0f3959;
+}
+
+
+.iconbtb {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    align-items: center;
+    margin: 10px;
+    position: relative;
+    font-size: 30px;
+    color: #0f3959;
+  }
+  .iconbtb::before {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .iconbtb::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 50%;
+    z-index: 0;
+    background: #fff;
+    transition: 0.4s;
+  }
+  .iconbtb:hover::after{
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  .iconbtb:hover{
+    color: white;
+  }
