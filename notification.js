@@ -16,16 +16,16 @@ function sendMessage(firstName, lastName, email, phone, message) {
     var name = firstName.replace(/ /g, '%20') + "%20" + lastName.replace(/ /g, '%20');
     email = email.replace(/ /g, '%20');
     phone = phone.replace(/ /g, '%20');
-    message = message.replace(/ /g,"%20");
-    fetch(api + "New%20Message%20From%20" + name + "%20at%20" + email + "%20at%20" + phone +":%20\n" + message)
+    message = message.replace(/ /g, '%20').split('\n').join('%0A');
+    var call = "New%20message%20from%20" + name + ".%0AEmail:%20" + email + "%0APhone:%20" + phone +"%0A" + message;
+    fetch(api + call)
         .then(res => {
             if(res.ok) {
                 alert("Success! Your message has been sent.");
-                console.log("email: " + email + " and ' " + message + " ' sent.");
+                console.log("Sucess!");
             } else{
                 alert("Eroor: Please try sending a message again.");
                 console.log("Error: " + res.status);
-                console.log("email: " + email + " and ' " + message + " ' failed to send.");
             }
         })
 }
