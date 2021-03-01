@@ -13,20 +13,30 @@ var button = document.getElementById('submit').addEventListener('click', functio
 });
 
 function sendMessage(firstName, lastName, email, phone, message) {
-    var name = firstName.replace(/ /g, '%20') + "%20" + lastName.replace(/ /g, '%20');
-    email = email.replace(/ /g, '%20');
-    phone = phone.replace(/ /g, '%20');
-    message = message.replace(/ /g, '%20').split('\n').join('%0A');
-    var call = "New%20message%20from%20" + name + ".%0AEmail:%20" + email + "%0APhone:%20" + phone +"%0A" + message;
+    var name = firstName + " " + lastName;
+    message = message.split('\n').join('%0A');
+    var call = "New message from " + name + ".%0AEmail: " + email + "%0APhone: " + phone +"%0A" + message;
     fetch(api + call)
         .then(res => {
             if(res.ok) {
-                alert("Success! Your message has been sent.");
                 console.log("Sucess!");
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your message has been sent. I\'ll answer ASAP!',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
             } else{
-                alert("Eroor: Please try sending a message again.");
-                console.log("Error: " + res.status);
+                console.log("Error: " + res.status); 
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Your message couldn\'t be sent. Please try that again.',
+                    icon: 'error',
+                    confirmButtonText: 'Retry :('
+                  })
             }
-        })
+        }
+    )
 }
+
 
