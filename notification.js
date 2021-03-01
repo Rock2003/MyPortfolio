@@ -1,4 +1,4 @@
-var TOKEN = "1599034139:AAH2zHXZUAndu2-8-yeOb8HuWbsyfBq2-10";
+var TOKEN = "1599034139:AAH2zHXZUAndu2-8-yeOb8HuWbsyfBq2-10"; 
 var chat = "-484766622";
 var api = "https://api.telegram.org/bot" + TOKEN + "/sendMessage?chat_id="+chat+"&text=";
 
